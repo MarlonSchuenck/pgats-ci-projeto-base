@@ -1,13 +1,14 @@
-# CI de Nível 02 - Disparo automático em períodos definidos
-
-name: 'Execução Agendada'
+# CI de Nível 03 - Disparo automático sempre que outro for concluído, com deploy
+name: 'Execução por Deploy'
 
 # triggers OU gatilhos de execução
-  # gatilho de eexec manual = schedule
+  # gatilho de eexec manual = workflow_run
 
 on:
-  schedule:
-    - cron: '39 19 * * *'
+  workflow_run:
+    workflows: ['Execução Manual']
+    types:
+      - completed
 
 jobs:
 
