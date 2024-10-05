@@ -40,6 +40,6 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: relatorio-de-testes
-          path: ./playwright-repost
+          path: ./playwright-report
 
       
