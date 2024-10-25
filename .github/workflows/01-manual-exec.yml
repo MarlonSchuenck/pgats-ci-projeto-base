@@ -1,31 +1,27 @@
-# CI de Nível 02 - Disparo automático em períodos definidos
+# CI de Nível 01 - Disparo manual a partir de 1 clique
 
-name: 'Execução Agendada'
+name: 'Execução Manual'
 
 # triggers OU gatilhos de execução
-  # gatilho de eexec manual = schedule
+# gatilho de eexec manual = workflow_dispatch
 
 on:
-  schedule:
-    # https://crontab.guru/#
-    - cron: '39 19 * * *'
+  workflow_dispatch:
 
 jobs:
-
   #descrição do Job
   e2e-tests:
-
     # maquina que o job vai executar
     runs-on: ['ubuntu-latest']
 
     # passo a passo das ações do job
     steps:
       - uses: actions/checkout@v4
-      
+
       # - uses: actions/setup-node@v4
       #   with:
       #     node-version: lts/*
-      
+
       - name: Instalando Yarn
         run: npm install -g yarn
 
@@ -34,7 +30,7 @@ jobs:
 
       - name: Instalando Playwright
         run: yarn playwright install
-      
+
       - name: Testes E2E (end-to-end)
         run: yarn run e2e
 
@@ -44,5 +40,3 @@ jobs:
         with:
           name: relatorio-de-testes
           path: ./playwright-report
-
-      

@@ -23,11 +23,13 @@
    ```shell
    yarn playwright install
    ```
-9. Abra o relatório de cobertura de código em `reports/coverage/lcov-report` 
+9. Abra o relatório de cobertura de código em `reports/coverage/lcov-report`
 10. Execute os testes de mutação com o Stryker
-   ```shell
-   yarn run test:mutation
-   ```
+
+```shell
+yarn run test:mutation
+```
+
 11. Abra o relatório de mutação em `reports/mutation`
 12. Execute os testes end-to-end com o Playwright
     ```shell
@@ -36,6 +38,6 @@
 13. Execute a aplicação com `yarn start`
 14. Acesse a aplicação publicada [neste link](https://pgats-ci-example.netlify.app)
 
-
 ---
+
 💜⚡️
