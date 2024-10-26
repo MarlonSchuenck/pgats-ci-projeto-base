@@ -35,7 +35,7 @@ jobs:
 
       - name: Instalando dependências
         run: yarn
-      
+
       - name: Testes de Unidade
         run: yarn run test
 
